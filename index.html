@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>manon.ss07 · anime &amp; OC art commissions</title>
+<meta name="description" content="Hand-drawn anime and original character commissions by manon.ss07: chibis, half bodies, character sheets and Twitch emotes. No AI, ever. Commissions open.">
+<link rel="canonical" href="https://manon-ss07.com/">
+<meta name="theme-color" content="#FFD9EE">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 56S6 40 6 22a13 13 0 0 1 26-4 13 13 0 0 1 26 4c0 18-26 34-26 34z' fill='%23FF7EB6' stroke='%23fff' stroke-width='4'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://manon-ss07.com/">
+<meta property="og:site_name" content="manon.ss07">
+<meta property="og:title" content="manon.ss07 ♡ commissions open">
+<meta property="og:description" content="Soft anime characters, character sheets and Twitch emotes. Hand-drawn, no AI, ever.">
+<meta property="og:image" content="https://manon-ss07.com/art/bows.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="2560">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&family=Nunito:wght@400;600;700;800&family=Silkscreen&family=Gaegu:wght@400;700&display=swap">
+<style>
+  /* Один светлый образ намеренно: пастельный cutecore в духе личных сайтов 2000-х. */
+  :root{
+    --ink:#3D2B4A; --ink-soft:#75627F; --line:#EAD7F0;
+    --pink:#FF7EB6; --pink-deep:#E0508F; --pink-soft:#FFE1F0; --lilac:#B07CE8; --lilac-soft:#EFE4FF;
+    --blue-soft:#DDF1FF; --yellow-soft:#FFF3CC; --mint-soft:#DFF7EA; --peach-soft:#FFE9DC;
+    --title:"Sniglet","Trebuchet MS",sans-serif;
+    --body:"Nunito","Segoe UI",system-ui,sans-serif;
+    --pixel:"Silkscreen",ui-monospace,monospace;
+    --hand:"Gaegu","Comic Sans MS",cursive;
+    color-scheme:light;
+  }
+  *{box-sizing:border-box;}
+  html.lock{overflow:hidden;}
+  body{
+    margin:0;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+    background-color:#F3E6FF;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Cpath d='M18 6l2.2 6.8L27 15l-6.8 2.2L18 24l-2.2-6.8L9 15l6.8-2.2z' fill='%23ffffff' opacity='.9'/%3E%3Cpath d='M54 40l1.5 4.5 4.5 1.5-4.5 1.5L54 52l-1.5-4.5L48 46l4.5-1.5z' fill='%23ffc6e2'/%3E%3Ccircle cx='52' cy='14' r='2.2' fill='%23ffffff' opacity='.8'/%3E%3Ccircle cx='14' cy='52' r='1.8' fill='%23dcc8ff'/%3E%3Ccircle cx='34' cy='62' r='1.4' fill='%23ffffff' opacity='.7'/%3E%3C/svg%3E"),
+      linear-gradient(160deg,#D6F3FF 0%,#FFD9EE 48%,#E6D9FF 100%);
+    background-attachment:fixed,fixed;
+  }
+  img{max-width:100%;}
+  a{color:var(--lilac);text-underline-offset:3px;}
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--pink);outline-offset:2px;border-radius:8px;}
+  .page{max-width:1020px;margin:0 auto;padding-inline:14px;padding-block:18px 40px;}
+  .kao{font-family:var(--body);white-space:nowrap;}
+
+  /* ---------- соцсети в самом верху ---------- */
+  .socbar{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:14px;}
+  .soc{display:inline-flex;align-items:center;gap:7px;font-family:var(--pixel);font-size:12px;color:var(--ink);text-decoration:none;
+    padding:8px 14px;border-radius:99px;border:2px solid #fff;cursor:pointer;
+    box-shadow:0 0 0 2px var(--line),0 3px 0 var(--line);transition:transform .12s,box-shadow .12s;}
+  .soc:hover{transform:translateY(-2px);box-shadow:0 0 0 2px var(--ink),0 5px 0 var(--line);}
+  .soc .i{font-family:var(--body);font-size:15px;line-height:1;}
+  .soc.soon{opacity:.8;}
+  .soon-tag{font-size:8.5px;background:var(--yellow-soft);border:1px solid #E8C45A;color:#9A7212;border-radius:99px;padding:1px 6px;}
+  .s-mint{background:var(--mint-soft);} .s-blue{background:var(--blue-soft);} .s-lilac{background:var(--lilac-soft);}
+  .s-pink{background:var(--pink-soft);} .s-peach{background:var(--peach-soft);}
+  button.soc{font:inherit;font-family:var(--pixel);font-size:12px;}
+
+  /* ---------- окна ---------- */
+  .win{background:#fff;border:2px solid #fff;border-radius:18px;overflow:hidden;
+    box-shadow:0 0 0 2px var(--line),0 10px 28px rgba(176,124,232,.18);}
+  .tbar{display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:8px 12px 8px 14px;background:linear-gradient(90deg,#BDEBFF,#FFC9E4 55%,#DCC8FF);
+    font-family:var(--pixel);font-size:12px;color:var(--ink);}
+  .tbar b{font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .ctl{display:flex;gap:5px;flex:none;}
+  .ctl i{font-style:normal;width:20px;height:18px;display:grid;place-items:center;font-size:10px;line-height:1;
+    background:#fff;border:1.5px solid var(--ink);border-radius:5px;box-shadow:1px 1px 0 var(--ink);}
+  .wbody{padding:20px;}
+  @media (max-width:520px){ .wbody{padding:16px;} }
+  .checker{background:repeating-conic-gradient(#FFFFFF 0 25%,#FFF1F8 0 50%) 0 0/26px 26px;}
+  h2.sec{font-family:var(--title);font-weight:800;font-size:clamp(24px,5vw,30px);line-height:1.1;margin:0 0 12px;color:var(--pink-deep);}
+  h3.mini{font-family:var(--pixel);font-weight:400;font-size:12.5px;margin:22px 0 10px;color:var(--ink-soft);}
+
+  /* ---------- шапка ---------- */
+  .top .wbody{text-align:center;padding:24px 16px 0;}
+  .logo{font-family:var(--title);font-weight:800;font-size:clamp(44px,11vw,96px);line-height:1;margin:0;
+    background:linear-gradient(180deg,#FF9AC8 0%,#FF6FAE 45%,#B07CE8 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:2px #fff;
+    filter:drop-shadow(0 3px 0 #fff) drop-shadow(0 4px 0 #F2C6E0) drop-shadow(0 0 14px rgba(255,126,182,.45));}
+  .sub{font-family:var(--pixel);font-size:12px;color:var(--ink-soft);margin:10px 0 12px;}
+  .jump{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;font-family:var(--pixel);font-size:12px;margin-bottom:14px;color:var(--pink);}
+  .jump a{color:var(--ink);text-decoration:none;padding:2px 6px;border-radius:6px;}
+  .jump a:hover{background:var(--pink-soft);}
+  .scallop{height:14px;background:radial-gradient(circle at 10px 0,transparent 9px,var(--pink-soft) 9.5px) 0 0/20px 14px repeat-x;}
+  .marquee{overflow:hidden;background:var(--pink-soft);border-top:2px dashed #fff;}
+  .track{display:flex;width:max-content;}
+  .track span{padding:8px 0;white-space:nowrap;font-family:var(--pixel);font-size:12px;color:#D6428A;}
+  @media (prefers-reduced-motion:no-preference){
+    .track{animation:roll 28s linear infinite;}
+    @keyframes roll{to{transform:translateX(-50%);}}
+  }
+
+  /* ---------- раскладка ---------- */
+  .layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:18px;margin-top:18px;align-items:start;}
+  @media (max-width:860px){ .layout{grid-template-columns:1fr;} }
+  main,aside{display:grid;gap:18px;min-width:0;}
+
+  /* ---------- записки от неё ---------- */
+  .psst{font-family:var(--hand);font-size:20px;line-height:1.25;color:#6B4E2E;background:#FFFBEA;
+    border:2px dashed #F2D98A;border-radius:12px;padding:9px 14px;margin:0 0 16px;transform:rotate(-1deg);}
+  .psst.pk{background:#FFF1F7;border-color:#F7B8D4;color:#8A3A60;transform:rotate(.8deg);}
+
+  /* ---------- письмо-приветствие ---------- */
+  .hello{display:grid;grid-template-columns:190px minmax(0,1fr);gap:24px;align-items:start;}
+  @media (max-width:620px){ .hello{grid-template-columns:1fr;gap:14px;} }
+  .me{display:flex;flex-direction:column;align-items:center;gap:14px;}
+  .ava{width:160px;height:160px;border-radius:50%;padding:5px;
+    background:conic-gradient(from 0deg,#FF9AC8,#B07CE8,#7CC8FF,#FFE08A,#FF9AC8);}
+  .ava img{display:block;width:100%;height:100%;border-radius:50%;border:4px solid #fff;object-fit:cover;}
+  .sign{display:flex;flex-direction:column;align-items:center;transform-origin:50% 0;}
+  @media (prefers-reduced-motion:no-preference){
+    .sign{animation:swing 3.2s ease-in-out infinite;}
+    @keyframes swing{0%,100%{transform:rotate(-3deg);}50%{transform:rotate(3deg);}}
+  }
+  .rope{position:relative;width:74px;height:22px;
+    background:
+      linear-gradient(to top right,transparent calc(50% - 1.2px),var(--ink) 50%,transparent calc(50% + 1.2px)) left/50% 100% no-repeat,
+      linear-gradient(to top left,transparent calc(50% - 1.2px),var(--ink) 50%,transparent calc(50% + 1.2px)) right/50% 100% no-repeat;}
+  .rope::before{content:"";position:absolute;left:50%;top:-4px;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:var(--pink-deep);}
+  .board{text-align:center;padding:9px 16px 10px;border:2.5px solid var(--ink);border-radius:14px;
+    background:linear-gradient(180deg,#E9FBF1,#CFF3DF);box-shadow:0 4px 0 var(--ink);}
+  .board .s1{display:block;font-family:var(--title);font-weight:800;font-size:25px;line-height:1.05;color:#2F8F5B;}
+  .board .s2{display:block;font-family:var(--pixel);font-size:10px;color:var(--ink);margin-top:3px;}
+  .board .s3{display:block;font-family:var(--hand);font-size:18px;color:#2F7A4E;margin-top:2px;}
+  .letter h2{font-family:var(--title);font-weight:800;font-size:clamp(30px,6vw,40px);line-height:1.05;margin:0 0 12px;color:var(--pink-deep);}
+  .letter p{margin:0 0 12px;}
+  .sig{font-family:var(--hand);font-size:28px;line-height:1;color:var(--pink-deep);margin:4px 0 12px;}
+  .ps{font-family:var(--hand);font-size:19px;line-height:1.3;color:var(--ink-soft);margin:0;}
+
+  /* ---------- галерея ---------- */
+  .gallery{column-count:2;column-gap:14px;}
+  @media (max-width:560px){ .gallery{column-count:1;} }
+  .gallery figure{break-inside:avoid;margin:0 0 14px;position:relative;border-radius:14px;overflow:hidden;
+    border:2px solid #fff;box-shadow:0 0 0 2px var(--line);background:#fff;}
+  .shot{all:unset;display:block;width:100%;cursor:zoom-in;}
+  .shot:focus-visible{outline:3px solid var(--pink);outline-offset:-3px;}
+  .shot img{display:block;width:100%;height:auto;transition:transform .25s;}
+  .shot:hover img{transform:scale(1.03);}
+  .gallery figcaption{position:absolute;left:10px;bottom:10px;right:10px;width:max-content;max-width:calc(100% - 20px);pointer-events:none;
+    font-family:var(--pixel);font-size:10px;background:#fff;border:1.5px solid var(--ink);border-radius:99px;padding:4px 10px;}
+
+  /* ---------- прайс ---------- */
+  .price{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:12px 4px;border-bottom:2px dotted var(--line);}
+  .price:last-of-type{border-bottom:0;}
+  .price b{font-weight:800;display:block;}
+  .price small{color:var(--ink-soft);font-size:13.5px;}
+  .amt{font-family:var(--title);font-weight:800;font-size:22px;color:var(--pink-deep);background:var(--pink-soft);
+    border-radius:12px;padding:3px 12px;font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+  .chip{font-family:var(--pixel);font-size:10.5px;background:var(--lilac-soft);border:1.5px solid var(--lilac);
+    color:#6E3FB0;border-radius:99px;padding:4px 11px;white-space:nowrap;}
+  .perks{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
+  .perks li{display:grid;grid-template-columns:22px 1fr;gap:8px;background:var(--blue-soft);border-radius:12px;padding:9px 12px;}
+  .perks li::before{content:"✦";color:#3A9BE0;}
+  .perks li:nth-child(2n){background:var(--pink-soft);}
+  .perks li:nth-child(2n)::before{color:var(--pink-deep);}
+  .anywhere{margin-top:18px;text-align:center;border:2px dashed #F7B8D4;border-radius:16px;padding:16px 14px;background:#FFF7FB;}
+  .anywhere p{margin:0 0 12px;font-family:var(--hand);font-size:22px;line-height:1.2;color:var(--pink-deep);}
+  .anywhere .socbar{margin:0;}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;}
+  @media (max-width:560px){ .cols{grid-template-columns:1fr;} }
+  .box{border:2px dashed var(--line);border-radius:14px;padding:14px 16px;}
+  .box h3{font-family:var(--pixel);font-weight:400;font-size:12px;margin:0 0 8px;color:var(--ink-soft);}
+  .box ul{margin:0;padding-left:18px;}
+  .box li{margin-bottom:4px;}
+  .box li::marker{content:"♡ ";color:var(--pink);}
+
+  /* ---------- заказ ---------- */
+  ol.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;gap:16px;}
+  ol.steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:14px;}
+  ol.steps li::before{content:counter(s);font-family:var(--title);font-weight:800;font-size:20px;width:40px;height:40px;
+    display:grid;place-items:center;border-radius:50%;background:var(--yellow-soft);border:2px solid var(--ink);}
+  ol.steps p{margin:0;}
+  ol.steps b{display:block;font-weight:800;}
+  ol.steps span{color:var(--ink-soft);font-size:15px;}
+  .check{list-style:none;margin:0;padding:0;display:grid;gap:6px;}
+  .check li{display:grid;grid-template-columns:24px 1fr;gap:6px;}
+  .check li::before{content:"♡";color:var(--pink);font-weight:800;}
+  .tpl{border:2px solid var(--line);border-radius:14px;overflow:hidden;margin-top:10px;}
+  .tpl-head{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--lilac-soft);}
+  .tpl-head span{font-family:var(--pixel);font-size:11px;color:#6E3FB0;}
+  .tpl pre{margin:0;padding:14px;font-family:ui-monospace,Consolas,monospace;font-size:13.5px;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere;background:#fff;}
+  .btn{font-family:var(--pixel);font-size:11px;color:#fff;background:var(--lilac);border:2px solid var(--ink);border-radius:99px;
+    padding:6px 13px;cursor:pointer;box-shadow:0 3px 0 var(--ink);}
+  .btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink);}
+  .know{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
+  .know li{display:grid;grid-template-columns:20px 1fr;gap:6px;font-size:15px;}
+  .know li::before{content:"✦";color:var(--lilac);}
+
+  /* ---------- вопросы ---------- */
+  .faq{display:grid;gap:10px;}
+  .faq details{border:2px solid var(--line);border-radius:14px;background:#fff;}
+  .faq details[open]{border-color:#F7B8D4;background:#FFF7FB;}
+  .faq summary{cursor:pointer;list-style:none;padding:12px 14px;font-weight:800;display:flex;justify-content:space-between;gap:10px;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"♡";color:var(--pink);flex:none;transition:transform .2s;}
+  .faq details[open] summary::after{content:"♥";transform:scale(1.25);}
+  .faq details p{margin:0;padding:0 14px 14px;color:var(--ink-soft);}
+
+  /* ---------- боковые виджеты ---------- */
+  aside .wbody{padding:16px;}
+  .slots{display:flex;justify-content:center;gap:6px;font-size:26px;color:var(--pink);margin:2px 0 4px;}
+  .note{font-size:13px;color:var(--ink-soft);text-align:center;margin:6px 0 0;}
+  .now{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:14px;}
+  .now b{font-family:var(--pixel);font-weight:400;font-size:10.5px;color:var(--lilac);display:block;}
+  .counter{font-family:var(--pixel);font-size:22px;letter-spacing:.12em;text-align:center;
+    background:#2B1F33;color:#7CFFB0;border-radius:10px;padding:10px 6px;border:2px solid var(--ink);}
+  .loves{display:flex;flex-wrap:wrap;gap:6px;}
+  .loves span{font-size:13px;background:var(--pink-soft);border-radius:99px;padding:3px 10px;}
+  .log{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:13.5px;}
+  .log time{font-family:var(--pixel);font-size:10.5px;color:var(--lilac);display:block;}
+  .badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
+  .b88{width:88px;height:31px;display:grid;place-items:center;text-align:center;font-family:var(--pixel);
+    font-size:8.5px;line-height:1.05;border:1px solid var(--ink);box-shadow:inset 0 0 0 1px #fff;color:var(--ink);}
+  .b88.a{background:linear-gradient(180deg,#FFD1E8,#FF9AC8);} .b88.b{background:linear-gradient(180deg,#EADCFF,#C9A6F5);}
+  .b88.c{background:linear-gradient(180deg,#DDF3FF,#9FD6FF);} .b88.d{background:linear-gradient(180deg,#FFF6D6,#FFD76A);}
+  .uc{display:block;font-family:var(--pixel);font-size:10.5px;text-align:center;color:#9A7212;margin-top:12px;
+    background:repeating-linear-gradient(45deg,#FFF3CC 0 10px,#FFE08A 10px 20px);border:1.5px solid #D6A300;border-radius:8px;padding:7px;}
+
+  footer{text-align:center;margin-top:22px;font-family:var(--pixel);font-size:11px;color:var(--ink-soft);}
+  footer a{color:var(--ink-soft);}
+
+  /* ---------- просмотр картинки ---------- */
+  dialog#lb{border:0;padding:0;margin:0;background:transparent;width:100vw;height:100vh;height:100dvh;max-width:100vw;max-height:100vh;max-height:100dvh;}
+  dialog#lb::backdrop{background:rgba(43,31,51,.84);backdrop-filter:blur(4px);}
+  .lb-in{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:56px 12px 18px;}
+  .lb-in img{display:block;max-width:min(100%,1100px);max-height:calc(100% - 64px);object-fit:contain;border-radius:14px;border:3px solid #fff;background:#fff;}
+  .lb-cap{font-family:var(--pixel);font-size:11px;background:#fff;color:var(--ink);border-radius:99px;padding:5px 12px;text-align:center;}
+  .lb-btn{position:fixed;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);
+    background:#fff;color:var(--ink);font-size:22px;line-height:1;cursor:pointer;box-shadow:0 3px 0 var(--ink);}
+  .lb-x{top:10px;right:10px;} .lb-prev{left:10px;top:50%;margin-top:-22px;} .lb-next{right:10px;top:50%;margin-top:-22px;}
+  @media (max-width:620px){ .lb-prev,.lb-next{top:auto;bottom:14px;margin-top:0;} .lb-in{padding-bottom:74px;} }
+
+  /* ---------- всплывашка ---------- */
+  .toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translate(-50%,24px);opacity:0;pointer-events:none;
+    z-index:10000;max-width:calc(100vw - 28px);text-align:center;font-weight:700;font-size:15px;color:var(--ink);
+    background:#fff;border:2px solid var(--ink);border-radius:99px;padding:10px 18px;box-shadow:0 4px 0 var(--ink);transition:opacity .2s,transform .2s;}
+  .toast.on{opacity:1;transform:translate(-50%,0);}
+
+  /* ---------- блёстки за курсором ---------- */
+  .spark{position:fixed;pointer-events:none;z-index:9999;font-size:15px;line-height:1;transform:translate(-50%,-50%);animation:fall .9s ease-out forwards;}
+  @keyframes fall{to{opacity:0;transform:translate(calc(-50% + var(--dx)),calc(-50% + 30px)) scale(.4) rotate(40deg);}}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <nav class="socbar" aria-label="my socials">
+    <a class="soc s-mint" href="https://www.tiktok.com/@manon.ss07" target="_blank" rel="noopener"><span class="i">♪</span> tiktok</a>
+    <a class="soc s-blue" href="https://t.me/yoorolie" target="_blank" rel="noopener"><span class="i">✉</span> telegram dm</a>
+    <button type="button" class="soc s-lilac soon" data-soon="my telegram channel"><span class="i">☾</span> tg channel <span class="soon-tag">soon</span></button>
+    <button type="button" class="soc s-pink soon" data-soon="instagram"><span class="i">✿</span> instagram <span class="soon-tag">soon</span></button>
+    <button type="button" class="soc s-peach soon" data-soon="pinterest"><span class="i">✧</span> pinterest <span class="soon-tag">soon</span></button>
+  </nav>
+
+  <header class="win top">
+    <div class="tbar"><b>★ manon.ss07 ♡ home</b><span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div>
+    <div class="wbody checker">
+      <h1 class="logo">manon.ss07</h1>
+      <p class="sub">anime &amp; oc artist ✦ hand-drawn ✦ soft colours only</p>
+      <nav class="jump" aria-label="on this page">
+        <a href="#gallery">gallery</a>♡<a href="#prices">prices</a>♡<a href="#order">how to order</a>♡<a href="#faq">faq</a>
+      </nav>
+      <div class="scallop" aria-hidden="true"></div>
+    </div>
+    <div class="marquee" aria-label="commissions are open, 3 slots">
+      <div class="track" aria-hidden="true">
+        <span>&nbsp;♡ commissions are open ♡ 3 slots ♡ chibis ♡ half bodies ♡ character sheets ♡ twitch emotes ♡ first revision is free ♡ no ai, ever ♡ dm me anywhere ♡&nbsp;</span>
+        <span>&nbsp;♡ commissions are open ♡ 3 slots ♡ chibis ♡ half bodies ♡ character sheets ♡ twitch emotes ♡ first revision is free ♡ no ai, ever ♡ dm me anywhere ♡&nbsp;</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <main>
+
+      <section class="win" aria-labelledby="hi">
+        <div class="tbar"><b>✉ hello.txt</b><span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div>
+        <div class="wbody hello">
+          <div class="me">
+            <div class="ava"><img src="art/avatar.jpg" alt="Avatar: a girl with purple bows and curly blonde hair" width="640" height="640"></div>
+            <div class="sign" role="img" aria-label="Sign: open for commissions, 3 slots">
+              <span class="rope" aria-hidden="true"></span>
+              <div class="board" aria-hidden="true">
+                <span class="s1">✿ open ✿</span>
+                <span class="s2">for commissions</span>
+                <span class="s3">3 slots left ♡</span>
+              </div>
+            </div>
+          </div>
+          <div class="letter">
+            <h2 id="hi">hi hi, i'm manon ♡</h2>
+            <p>welcome to my tiny corner of the internet <span class="kao">(˶ᵔ ᵕ ᵔ˶)</span> take your shoes off, grab some tea and stay as long as you like.</p>
+            <p>i draw soft anime characters — too many bows, floppy dog ears, little wings and eyes that look just a tiny bit sad. pastel everything, always.</p>
+            <p>if you have a character who deserves to be drawn, i'd really love to meet them <span class="kao">✉</span></p>
+            <p class="sig">— manon ♡</p>
+            <p class="ps">p.s. every single line here is drawn by hand. no ai, ever ✧</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="win" id="gallery" aria-labelledby="gal-h">
+        <div class="tbar"><b>✿ gallery.exe</b><span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div>
+        <div class="wbody">
+          <h2 class="sec" id="gal-h">my little gallery ✿</h2>
+          <p class="psst">psst! tap any picture to see it big <span class="kao">(｡•ᴗ•｡)</span></p>
+          <div class="gallery">
+            <figure><button class="shot" type="button" data-full="art/bows.jpg" data-cap="half body ♡ my favourite curls"><img src="art/bows.jpg" alt="Half body: a girl with purple bows and curly blonde hair" width="1920" height="2560" loading="lazy"></button><figcaption>half body ♡ my favourite curls</figcaption></figure>
+            <figure><button class="shot" type="button" data-full="art/bath.jpg" data-cap="full scene ♡ bath night"><img src="art/bath.jpg" alt="Full scene: two girls in a bathhouse under soft blue light" width="2560" height="1524" loading="lazy"></button><figcaption>full scene ♡ bath night</figcaption></figure>
+            <figure><button class="shot" type="button" data-full="art/chick.jpg" data-cap="character ♡ hugging her little friend"><img src="art/chick.jpg" alt="A girl with dog ears hugging a small yellow friend" width="870" height="1524" loading="lazy"></button><figcaption>character ♡ hugging her little friend</figcaption></figure>
+            <figure><button class="shot" type="button" data-full="art/beach.jpg" data-cap="full scene ♡ a walk by the sea"><img src="art/beach.jpg" alt="Full scene: a winged girl walking along a pale shoreline" width="2048" height="1152" loading="lazy"></button><figcaption>full scene ♡ a walk by the sea</figcaption></figure>
+            <figure><button class="shot" type="button" data-full="art/bows-sketch.jpg" data-cap="same girl ✎ before colour"><img src="art/bows-sketch.jpg" alt="Line art of the bow girl before colouring" width="1920" height="2560" loading="lazy"></button><figcaption>same girl ✎ before colour</figcaption></figure>
+            <figure><button class="shot" type="button" data-full="art/katana.jpg" data-cap="full body ♡ ribbons and a katana"><img src="art/katana.jpg" alt="Full body: a girl with a katana over her shoulder and trailing ribbons" width="2560" height="2560" loading="lazy"></button><figcaption>full body ♡ ribbons and a katana</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="win" id="prices" aria-labelledby="pr-h">
+        <div class="tbar"><b>✧ prices.exe</b><span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div>
+        <div class="wbody">
+          <h2 class="sec" id="pr-h">prices ✧</h2>
+          <p class="psst pk">all prices are in USD ♡ i always tell you the final price before i start — no surprises <span class="kao">(ᵔᴥᵔ)</span></p>
+          <div class="price"><span><b>Chibi</b><small>a small, squishy full body</small></span><span class="amt">$25</span></div>
+          <div class="price"><span><b>Bust</b><small>head and shoulders</small></span><span class="amt">$30</span></div>
+          <div class="price"><span><b>Half body</b><small>down to the waist</small></span><span class="amt">$45</span></div>
+          <div class="price"><span><b>Full body</b><small>the whole character, fully coloured</small></span><span class="amt">$60</span></div>
+          <div class="price"><span><b>Character sheet</b><small>full body plus its own colour palette</small></span><span class="amt">$75</span></div>
+          <div class="price"><span><b>Twitch emote</b><small>one emote</small></span><span class="amt">$20</span></div>
+          <div class="price"><span><b>Emote pack</b><small>five emotes, one cute set</small></span><span class="amt">$85</span></div>
+          <div class="chips">
+            <span class="chip">extra character +75%</span>
+            <span class="chip">detailed background +$30</span>
+            <span class="chip">complex design +$15</span>
+            <span class="chip">commercial use x2</span>
+          </div>
+
+          <h3 class="mini">what you get ♡</h3>
+          <ul class="perks">
+            <li><span>100% hand-drawn. no ai, ever — you can watch me draw on <a href="https://www.tiktok.com/@manon.ss07" target="_blank" rel="noopener">tiktok</a> ♪</span></li>
+            <li><span>your first revision is free <span class="kao">(˶ᵔ ᵕ ᵔ˶)</span> after that it's +$10 each</span></li>
+            <li><span>a full-size png without a watermark, ready for your pfp, banner or stream</span></li>
+            <li><span>character sheets come with their own colour palette</span></li>
+            <li><span>little progress updates, so you're never left wondering <span class="kao">(｡•ᴗ•｡)</span></span></li>
+          </ul>
+
+          <div class="anywhere">
+            <p>dm me anywhere you like — i answer everywhere ♡</p>
+            <div class="socbar">
+              <a class="soc s-mint" href="https://www.tiktok.com/@manon.ss07" target="_blank" rel="noopener"><span class="i">♪</span> tiktok</a>
+              <a class="soc s-blue" href="https://t.me/yoorolie" target="_blank" rel="noopener"><span class="i">✉</span> telegram dm</a>
+              <button type="button" class="soc s-pink soon" data-soon="instagram"><span class="i">✿</span> instagram <span class="soon-tag">soon</span></button>
+            </div>
+          </div>
+
+          <div class="cols">
+            <div class="box"><h3>i draw</h3><ul><li>original characters</li><li>fanart</li><li>vtuber &amp; twitch assets</li><li>chibis and emotes</li></ul></div>
+            <div class="box"><h3>i don't draw</h3><ul><li>nsfw</li><li>hate symbols</li><li>real people</li><li>anything with ai as a base</li></ul></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="win" id="order" aria-labelledby="or-h">
+        <div class="tbar"><b>✎ order.exe</b><span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div>
+        <div class="wbody">
+          <h2 class="sec" id="or-h">how to order ✎</h2>
+          <p class="psst">don't be shy!! i don't bite <span class="kao">₍ᐢ. .ᐢ₎</span> and i love answering questions</p>
+          <ol class="steps">
+            <li><p><b>say hi ✉</b><span>Message me anywhere with your character's reference and what you'd like.</span></p></li>
+            <li><p><b>we agree on everything ♡</b><span>Size, final price and deadline. Then I send you the payment options — 50% upfront, the rest at the end. First-time clients pay 100% upfront.</span></p></li>
+            <li><p><b>sketch ✎</b><span>You see it first. Your first revision is free.</span></p></li>
+            <li><p><b>colour &amp; details ✧</b><span>I finish everything and show you a preview with a watermark.</span></p></li>
+            <li><p><b>it's yours! <span class="kao">(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</span></b><span>After the final payment you get the full-size file.</span></p></li>
+          </ol>
+
+          <h3 class="mini">what to send me ♡</h3>
+          <ul class="check">
+            <li>a reference picture of your character (or a detailed description)</li>
+            <li>which size you'd like</li>
+            <li>pose or expression ideas</li>
+            <li>anything i must not get wrong — a scar, eye colour, a favourite accessory</li>
+            <li>background: none, simple or detailed</li>
+            <li>a date, if you need it by then</li>
+          </ul>
+
+          <h3 class="mini">or just copy this and fill it in ✧</h3>
+          <div class="tpl">
+            <div class="tpl-head"><span>my commission request</span><button type="button" class="btn" data-copy="tpl">copy ♡</button></div>
+<pre id="tpl">hi manon! ♡
+size:
+reference:
+about my character:
+pose / expression:
+background: none / simple / detailed
+extra character: yes / no
+needed by: </pre>
+          </div>
+
+          <h3 class="mini">good to know ✦</h3>
+          <ul class="know">
+            <li>i can say no to a request if it's not something i draw — that's okay ♡</li>
+            <li>refunds: full refund before i start, 50% after the sketch, none once i'm colouring</li>
+            <li>personal use means pfp, banners and printing for yourself. commercial use is x2</li>
+            <li>i might share the finished art on my socials — just tell me if you'd like it kept private</li>
+            <li>please credit @manon.ss07 when you post it ♡</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="win" id="faq" aria-labelledby="faq-h">
+        <div class="tbar"><b>? faq.txt</b><span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div>
+        <div class="wbody">
+          <h2 class="sec" id="faq-h">little questions ♡</h2>
+          <div class="faq">
+            <details><summary>how long does it take?</summary><p>usually 7–14 days. if i'm running late, you'll hear it from me first ♡</p></details>
+            <details><summary>can i use it as my pfp or on stream?</summary><p>yes!! that's what it's for <span class="kao">(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</span> just credit me ♡</p></details>
+            <details><summary>i don't have a reference…</summary><p>that's okay! describe your character in a few lines and i'll design them for you.</p></details>
+            <details><summary>is it really not ai?</summary><p>really, really. every line is mine — you can watch me draw on <a href="https://www.tiktok.com/@manon.ss07" target="_blank" rel="noopener">tiktok</a> ♪</p></details>
+            <details><summary>do you draw fanart?</summary><p>yes! tell me the character and the series ✧</p></details>
+            <details><summary>how do i pay?</summary><p>once we agree on everything, i'll send you the payment options ♡</p></details>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <aside>
+      <section class="win">
+        <div class="tbar"><b>♡ slots</b><span class="ctl" aria-hidden="true"><i>×</i></span></div>
+        <div class="wbody">
+          <div class="slots" aria-label="3 of 3 slots open"><span>♡</span><span>♡</span><span>♡</span></div>
+          <p class="note">3 of 3 slots open — come get one ♡</p>
+        </div>
+      </section>
+
+      <section class="win">
+        <div class="tbar"><b>✎ currently</b><span class="ctl" aria-hidden="true"><i>×</i></span></div>
+        <div class="wbody">
+          <ul class="now">
+            <li><b>drawing</b>new examples for my price sheet ✎</li>
+            <li><b>status</b>open for commissions <span class="kao">(｡•ᴗ•｡)</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="win">
+        <div class="tbar"><b>✦ your visits</b><span class="ctl" aria-hidden="true"><i>×</i></span></div>
+        <div class="wbody">
+          <div class="counter" id="visits">00001</div>
+          <p class="note">times you've been here ♡ thank you for coming back</p>
+        </div>
+      </section>
+
+      <section class="win" id="about">
+        <div class="tbar"><b>☆ about.exe</b><span class="ctl" aria-hidden="true"><i>×</i></span></div>
+        <div class="wbody">
+          <p style="margin:0 0 12px">anime &amp; oc artist ✧ i like drawing characters who look soft on the outside and have a whole story inside.</p>
+          <p style="margin:0 0 8px;font-family:var(--pixel);font-size:10.5px;color:var(--lilac)">things i love</p>
+          <div class="loves"><span>bows</span><span>floppy dog ears</span><span>tiny wings</span><span>curly hair</span><span>pastel everything</span><span>sad pretty eyes</span></div>
+        </div>
+      </section>
+
+      <section class="win">
+        <div class="tbar"><b>✧ updates</b><span class="ctl" aria-hidden="true"><i>×</i></span></div>
+        <div class="wbody">
+          <ul class="log">
+            <li><time datetime="2026-09-22">22.09.2026</time>moved to manon-ss07.com ♡ tap the gallery to zoom in ✧</li>
+            <li><time datetime="2026-09-21">21.09.2026</time>the site is up · commissions open</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="win">
+        <div class="tbar"><b>✿ buttons</b><span class="ctl" aria-hidden="true"><i>×</i></span></div>
+        <div class="wbody">
+          <div class="badges">
+            <span class="b88 a">COMMISSIONS<br>OPEN</span>
+            <span class="b88 b">NO AI ART<br>EVER</span>
+            <span class="b88 c">MADE WITH<br>&lt;3</span>
+            <span class="b88 d">MANON.SS07</span>
+          </div>
+          <span class="uc">✦ under construction ✦</span>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <footer>© 2026 manon.ss07 ♡ all artwork is hand-drawn and my own ♡ <a href="https://t.me/yoorolie" target="_blank" rel="noopener">@yoorolie</a></footer>
+</div>
+
+<dialog id="lb" aria-label="artwork viewer">
+  <div class="lb-in">
+    <img alt="">
+    <p class="lb-cap"></p>
+  </div>
+  <button type="button" class="lb-btn lb-x" aria-label="close">×</button>
+  <button type="button" class="lb-btn lb-prev" aria-label="previous picture">‹</button>
+  <button type="button" class="lb-btn lb-next" aria-label="next picture">›</button>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+  /* всплывашка */
+  var toastEl = document.getElementById("toast"), toastT;
+  function toast(msg){
+    toastEl.textContent = msg; toastEl.classList.add("on");
+    clearTimeout(toastT); toastT = setTimeout(function(){ toastEl.classList.remove("on"); }, 2800);
+  }
+
+  /* соцсети, которых ещё нет */
+  document.querySelectorAll("[data-soon]").forEach(function(b){
+    b.addEventListener("click", function(){ toast(b.dataset.soon + " isn't here yet (｡•́︿•̀｡) coming soon ♡"); });
+  });
+
+  /* шаблон заявки в буфер */
+  document.querySelectorAll("[data-copy]").forEach(function(b){
+    b.addEventListener("click", function(){
+      var el = document.getElementById(b.dataset.copy);
+      var select = function(){
+        var r = document.createRange(); r.selectNodeContents(el);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        toast("selected! now press copy ♡");
+      };
+      try{
+        navigator.clipboard.writeText(el.textContent).then(function(){ toast("copied! now paste it in my dms ♡ (˶ᵔ ᵕ ᵔ˶)"); }, select);
+      }catch(e){ select(); }
+    });
+  });
+
+  /* просмотр картинок */
+  (function(){
+    var shots = Array.prototype.slice.call(document.querySelectorAll(".shot"));
+    var lb = document.getElementById("lb");
+    if (!shots.length || !lb) return;
+    var img = lb.querySelector("img"), cap = lb.querySelector(".lb-cap"), cur = 0, x0 = null;
+    function show(i){
+      cur = (i + shots.length) % shots.length;
+      var s = shots[cur], inner = s.querySelector("img");
+      img.src = s.dataset.full; img.alt = inner ? inner.alt : "";
+      cap.textContent = s.dataset.cap + "  ·  " + (cur + 1) + " / " + shots.length;
+    }
+    function open(i){
+      show(i);
+      if (lb.showModal) lb.showModal(); else lb.setAttribute("open", "");
+      document.documentElement.classList.add("lock");
+    }
+    function close(){ if (lb.close) lb.close(); else { lb.removeAttribute("open"); unlock(); } }
+    function unlock(){ document.documentElement.classList.remove("lock"); }
+    shots.forEach(function(s, i){ s.addEventListener("click", function(){ open(i); }); });
+    lb.addEventListener("close", unlock);
+    lb.querySelector(".lb-x").addEventListener("click", close);
+    lb.querySelector(".lb-prev").addEventListener("click", function(){ show(cur - 1); });
+    lb.querySelector(".lb-next").addEventListener("click", function(){ show(cur + 1); });
+    lb.addEventListener("click", function(e){ if (e.target === lb || e.target.classList.contains("lb-in")) close(); });
+    document.addEventListener("keydown", function(e){
+      if (!lb.open) return;
+      if (e.key === "ArrowLeft") show(cur - 1);
+      if (e.key === "ArrowRight") show(cur + 1);
+    });
+    lb.addEventListener("touchstart", function(e){ x0 = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener("touchend", function(e){
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+  })();
+
+  /* счётчик визитов этого человека */
+  (function(){
+    try{
+      var n = (parseInt(localStorage.getItem("manon-visits") || "0", 10) || 0) + 1;
+      localStorage.setItem("manon-visits", String(n));
+      document.getElementById("visits").textContent = String(n).padStart(5, "0");
+    }catch(e){}
+  })();
+
+  /* блёстки за курсором */
+  (function(){
+    var mq = window.matchMedia;
+    if (!mq || mq("(prefers-reduced-motion: reduce)").matches || !mq("(pointer: fine)").matches) return;
+    var glyphs = ["✦","✧","♡","⋆"], colors = ["#FF7EB6","#B07CE8","#7CC8FF","#FFC94D"];
+    var last = 0, live = 0;
+    document.addEventListener("pointermove", function(e){
+      var now = performance.now();
+      if (now - last < 45 || live > 22) return;
+      last = now; live++;
+      var s = document.createElement("span");
+      s.className = "spark";
+      s.textContent = glyphs[(Math.random() * glyphs.length) | 0];
+      s.style.left = e.clientX + "px"; s.style.top = e.clientY + "px";
+      s.style.color = colors[(Math.random() * colors.length) | 0];
+      s.style.setProperty("--dx", (Math.random() * 30 - 15).toFixed(1) + "px");
+      document.body.appendChild(s);
+      setTimeout(function(){ s.remove(); live--; }, 900);
+    }, { passive: true });
+  })();
+</script>
+</body>
+</html>
