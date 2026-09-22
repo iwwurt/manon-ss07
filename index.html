@@ -111,27 +111,7 @@
   .psst.pk{background:#FFF1F7;border-color:#F7B8D4;color:#8A3A60;transform:rotate(.8deg);}
 
   /* ---------- письмо-приветствие ---------- */
-  .hello{display:grid;grid-template-columns:190px minmax(0,1fr);gap:24px;align-items:start;}
-  @media (max-width:620px){ .hello{grid-template-columns:1fr;gap:14px;} }
-  .me{display:flex;flex-direction:column;align-items:center;gap:14px;}
-  .ava{width:160px;height:160px;border-radius:50%;padding:5px;
-    background:conic-gradient(from 0deg,#FF9AC8,#B07CE8,#7CC8FF,#FFE08A,#FF9AC8);}
-  .ava img{display:block;width:100%;height:100%;border-radius:50%;border:4px solid #fff;object-fit:cover;}
-  .sign{display:flex;flex-direction:column;align-items:center;transform-origin:50% 0;}
-  @media (prefers-reduced-motion:no-preference){
-    .sign{animation:swing 3.2s ease-in-out infinite;}
-    @keyframes swing{0%,100%{transform:rotate(-3deg);}50%{transform:rotate(3deg);}}
-  }
-  .rope{position:relative;width:74px;height:22px;
-    background:
-      linear-gradient(to top right,transparent calc(50% - 1.2px),var(--ink) 50%,transparent calc(50% + 1.2px)) left/50% 100% no-repeat,
-      linear-gradient(to top left,transparent calc(50% - 1.2px),var(--ink) 50%,transparent calc(50% + 1.2px)) right/50% 100% no-repeat;}
-  .rope::before{content:"";position:absolute;left:50%;top:-4px;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:var(--pink-deep);}
-  .board{text-align:center;padding:9px 16px 10px;border:2.5px solid var(--ink);border-radius:14px;
-    background:linear-gradient(180deg,#E9FBF1,#CFF3DF);box-shadow:0 4px 0 var(--ink);}
-  .board .s1{display:block;font-family:var(--title);font-weight:800;font-size:25px;line-height:1.05;color:#2F8F5B;}
-  .board .s2{display:block;font-family:var(--pixel);font-size:10px;color:var(--ink);margin-top:3px;}
-  .board .s3{display:block;font-family:var(--hand);font-size:18px;color:#2F7A4E;margin-top:2px;}
+  .letter{max-width:62ch;}
   .letter h2{font-family:var(--title);font-weight:800;font-size:clamp(30px,6vw,40px);line-height:1.05;margin:0 0 12px;color:var(--pink-deep);}
   .letter p{margin:0 0 12px;}
   .sig{font-family:var(--hand);font-size:28px;line-height:1;color:var(--pink-deep);margin:4px 0 12px;}
@@ -213,19 +193,21 @@
   .note{font-size:13px;color:var(--ink-soft);text-align:center;margin:6px 0 0;}
   .now{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:14px;}
   .now b{font-family:var(--pixel);font-weight:400;font-size:10.5px;color:var(--lilac);display:block;}
-  .counter{font-family:var(--pixel);font-size:22px;letter-spacing:.12em;text-align:center;
-    background:#2B1F33;color:#7CFFB0;border-radius:10px;padding:10px 6px;border:2px solid var(--ink);}
+  /* сколько человек уже здесь — вместо счётчика визитов */
+  .clock{display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;
+    background:linear-gradient(135deg,#FFE7F2,#F0E6FF);border:2px dashed #F7B8D4;border-radius:16px;padding:12px 8px;}
+  .clock .beat{font-size:20px;color:var(--pink);line-height:1;}
+  @media (prefers-reduced-motion:no-preference){
+    .clock .beat{animation:beat 1.1s ease-in-out infinite;}
+    @keyframes beat{0%,100%{transform:scale(1);}15%{transform:scale(1.28);}30%{transform:scale(1);}45%{transform:scale(1.18);}}
+  }
+  .clock .num{font-family:var(--title);font-weight:800;font-size:30px;line-height:1;color:var(--pink-deep);font-variant-numeric:tabular-nums;}
+  .clock .unit{font-family:var(--pixel);font-size:10.5px;color:var(--ink-soft);}
+  .stay-msg{font-family:var(--hand);font-size:21px;line-height:1.2;color:var(--pink-deep);text-align:center;
+    margin:12px 0 0;min-height:2.4em;transition:opacity .3s;}
+  .stay-msg.fade{opacity:0;}
   .loves{display:flex;flex-wrap:wrap;gap:6px;}
   .loves span{font-size:13px;background:var(--pink-soft);border-radius:99px;padding:3px 10px;}
-  .log{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:13.5px;}
-  .log time{font-family:var(--pixel);font-size:10.5px;color:var(--lilac);display:block;}
-  .badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
-  .b88{width:88px;height:31px;display:grid;place-items:center;text-align:center;font-family:var(--pixel);
-    font-size:8.5px;line-height:1.05;border:1px solid var(--ink);box-shadow:inset 0 0 0 1px #fff;color:var(--ink);}
-  .b88.a{background:linear-gradient(180deg,#FFD1E8,#FF9AC8);} .b88.b{background:linear-gradient(180deg,#EADCFF,#C9A6F5);}
-  .b88.c{background:linear-gradient(180deg,#DDF3FF,#9FD6FF);} .b88.d{background:linear-gradient(180deg,#FFF6D6,#FFD76A);}
-  .uc{display:block;font-family:var(--pixel);font-size:10.5px;text-align:center;color:#9A7212;margin-top:12px;
-    background:repeating-linear-gradient(45deg,#FFF3CC 0 10px,#FFE08A 10px 20px);border:1.5px solid #D6A300;border-radius:8px;padding:7px;}
 
   footer{text-align:center;margin-top:22px;font-family:var(--pixel);font-size:11px;color:var(--ink-soft);}
   footer a{color:var(--ink-soft);}
@@ -287,18 +269,7 @@
 
       <section class="win" aria-labelledby="hi">
         <div class="tbar"><b>✉ hello.txt</b><span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div>
-        <div class="wbody hello">
-          <div class="me">
-            <div class="ava"><img src="art/avatar.jpg" alt="Avatar: a girl with purple bows and curly blonde hair" width="640" height="640"></div>
-            <div class="sign" role="img" aria-label="Sign: open for commissions, 3 slots">
-              <span class="rope" aria-hidden="true"></span>
-              <div class="board" aria-hidden="true">
-                <span class="s1">✿ open ✿</span>
-                <span class="s2">for commissions</span>
-                <span class="s3">3 slots left ♡</span>
-              </div>
-            </div>
-          </div>
+        <div class="wbody">
           <div class="letter">
             <h2 id="hi">hi hi, i'm manon ♡</h2>
             <p>welcome to my tiny corner of the internet <span class="kao">(˶ᵔ ᵕ ᵔ˶)</span> take your shoes off, grab some tea and stay as long as you like.</p>
@@ -330,7 +301,7 @@
         <div class="tbar"><b>✧ prices.exe</b><span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div>
         <div class="wbody">
           <h2 class="sec" id="pr-h">prices ✧</h2>
-          <p class="psst pk">all prices are in USD ♡ i always tell you the final price before i start — no surprises <span class="kao">(ᵔᴥᵔ)</span></p>
+          <p class="psst pk">all prices are in USD ♡ i always tell you the final price before i start — no surprises <span class="kao">(◕‿◕)</span></p>
           <div class="price"><span><b>Chibi</b><small>a small, squishy full body</small></span><span class="amt">$25</span></div>
           <div class="price"><span><b>Bust</b><small>head and shoulders</small></span><span class="amt">$30</span></div>
           <div class="price"><span><b>Half body</b><small>down to the waist</small></span><span class="amt">$45</span></div>
@@ -374,13 +345,13 @@
         <div class="tbar"><b>✎ order.exe</b><span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div>
         <div class="wbody">
           <h2 class="sec" id="or-h">how to order ✎</h2>
-          <p class="psst">don't be shy!! i don't bite <span class="kao">₍ᐢ. .ᐢ₎</span> and i love answering questions</p>
+          <p class="psst">don't be shy!! i don't bite <span class="kao">(・ω・)</span> and i love answering questions</p>
           <ol class="steps">
             <li><p><b>say hi ✉</b><span>Message me anywhere with your character's reference and what you'd like.</span></p></li>
             <li><p><b>we agree on everything ♡</b><span>Size, final price and deadline. Then I send you the payment options — 50% upfront, the rest at the end. First-time clients pay 100% upfront.</span></p></li>
             <li><p><b>sketch ✎</b><span>You see it first. Your first revision is free.</span></p></li>
             <li><p><b>colour &amp; details ✧</b><span>I finish everything and show you a preview with a watermark.</span></p></li>
-            <li><p><b>it's yours! <span class="kao">(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</span></b><span>After the final payment you get the full-size file.</span></p></li>
+            <li><p><b>it's yours! <span class="kao">(^▽^)</span></b><span>After the final payment you get the full-size file.</span></p></li>
           </ol>
 
           <h3 class="mini">what to send me ♡</h3>
@@ -423,7 +394,7 @@ needed by: </pre>
           <h2 class="sec" id="faq-h">little questions ♡</h2>
           <div class="faq">
             <details><summary>how long does it take?</summary><p>usually 7–14 days. if i'm running late, you'll hear it from me first ♡</p></details>
-            <details><summary>can i use it as my pfp or on stream?</summary><p>yes!! that's what it's for <span class="kao">(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</span> just credit me ♡</p></details>
+            <details><summary>can i use it as my pfp or on stream?</summary><p>yes!! that's what it's for <span class="kao">(^▽^)</span> just credit me ♡</p></details>
             <details><summary>i don't have a reference…</summary><p>that's okay! describe your character in a few lines and i'll design them for you.</p></details>
             <details><summary>is it really not ai?</summary><p>really, really. every line is mine — you can watch me draw on <a href="https://www.tiktok.com/@manon.ss07" target="_blank" rel="noopener">tiktok</a> ♪</p></details>
             <details><summary>do you draw fanart?</summary><p>yes! tell me the character and the series ✧</p></details>
@@ -454,10 +425,10 @@ needed by: </pre>
       </section>
 
       <section class="win">
-        <div class="tbar"><b>✦ your visits</b><span class="ctl" aria-hidden="true"><i>×</i></span></div>
+        <div class="tbar"><b>♡ time with me</b><span class="ctl" aria-hidden="true"><i>×</i></span></div>
         <div class="wbody">
-          <div class="counter" id="visits">00001</div>
-          <p class="note">times you've been here ♡ thank you for coming back</p>
+          <div class="clock"><span class="beat" aria-hidden="true">♥</span><span class="num" id="stayNum">0</span><span class="unit" id="stayUnit">sec</span></div>
+          <p class="stay-msg" id="stayMsg">hi hi ♡ make yourself at home</p>
         </div>
       </section>
 
@@ -470,28 +441,6 @@ needed by: </pre>
         </div>
       </section>
 
-      <section class="win">
-        <div class="tbar"><b>✧ updates</b><span class="ctl" aria-hidden="true"><i>×</i></span></div>
-        <div class="wbody">
-          <ul class="log">
-            <li><time datetime="2026-09-22">22.09.2026</time>moved to manon-ss07.com ♡ tap the gallery to zoom in ✧</li>
-            <li><time datetime="2026-09-21">21.09.2026</time>the site is up · commissions open</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="win">
-        <div class="tbar"><b>✿ buttons</b><span class="ctl" aria-hidden="true"><i>×</i></span></div>
-        <div class="wbody">
-          <div class="badges">
-            <span class="b88 a">COMMISSIONS<br>OPEN</span>
-            <span class="b88 b">NO AI ART<br>EVER</span>
-            <span class="b88 c">MADE WITH<br>&lt;3</span>
-            <span class="b88 d">MANON.SS07</span>
-          </div>
-          <span class="uc">✦ under construction ✦</span>
-        </div>
-      </section>
     </aside>
   </div>
 
@@ -576,13 +525,44 @@ needed by: </pre>
     }, { passive: true });
   })();
 
-  /* счётчик визитов этого человека */
+  /* сколько человек уже здесь — считаем, только пока вкладка перед глазами */
   (function(){
-    try{
-      var n = (parseInt(localStorage.getItem("manon-visits") || "0", 10) || 0) + 1;
-      localStorage.setItem("manon-visits", String(n));
-      document.getElementById("visits").textContent = String(n).padStart(5, "0");
-    }catch(e){}
+    var numEl = document.getElementById("stayNum"), unitEl = document.getElementById("stayUnit"), msgEl = document.getElementById("stayMsg");
+    if (!numEl || !msgEl) return;
+    var STAGES = [
+      [0,   ["oh hi! you just got here ♡", "welcome welcome ♡", "hi hi ♡ make yourself at home"]],
+      [10,  ["stay with me a little longer?", "don't leave yet (・ω・)", "i like having you here ♡"]],
+      [30,  ["are we almost friends now?", "you're still here… that's so nice (◕‿◕)", "okay, i'm getting attached"]],
+      [60,  ["one whole minute!! we're friends now ♡", "friends? friends. it's decided", "don't go, i'll miss you ♡"]],
+      [180, ["you're my favourite visitor. don't tell the others", "should i make us some tea?", "we could just stay like this ♡"]],
+      [600, ["ten minutes!! you really like it here (^▽^)", "at this point you live here ♡", "okay, now you have to commission me"]]
+    ];
+    var secs = 0, stage = 0, lastSwap = 0, away = false;
+    function stageFor(s){ var i = 0; while (i + 1 < STAGES.length && s >= STAGES[i + 1][0]) i++; return i; }
+    function pick(i){
+      var pool = STAGES[i][1].filter(function(p){ return p !== msgEl.textContent; });
+      return pool[(Math.random() * pool.length) | 0];
+    }
+    function say(text){
+      msgEl.classList.add("fade");
+      setTimeout(function(){ msgEl.textContent = text; msgEl.classList.remove("fade"); }, 300);
+    }
+    function render(){
+      if (secs < 60){ numEl.textContent = secs; unitEl.textContent = "sec"; }
+      else { var s = secs % 60; numEl.textContent = Math.floor(secs / 60) + ":" + (s < 10 ? "0" : "") + s; unitEl.textContent = "min"; }
+    }
+    document.addEventListener("visibilitychange", function(){
+      if (document.hidden){ away = true; }
+      else if (away){ away = false; lastSwap = secs; say("you came back!! i missed you ♡"); }
+    });
+    msgEl.textContent = pick(0);
+    render();
+    setInterval(function(){
+      if (document.hidden) return;
+      secs++; render();
+      var i = stageFor(secs);
+      if (i !== stage || secs - lastSwap >= 8){ stage = i; lastSwap = secs; say(pick(i)); }
+    }, 1000);
   })();
 
   /* блёстки за курсором */
