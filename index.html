@@ -113,6 +113,9 @@
   /* ---------- письмо-приветствие ---------- */
   .banner{margin:0 0 20px;border-radius:14px;overflow:hidden;border:2px solid #fff;box-shadow:0 0 0 2px var(--line);background:#CFEFFF;}
   .banner img{display:block;width:100%;height:auto;}
+  /* её листы с прайсом и списком «что рисую» — рисованные, поэтому показываем целиком и даём открыть на весь экран */
+  .pic{margin:0 0 16px;border-radius:14px;overflow:hidden;border:2px solid #fff;box-shadow:0 0 0 2px var(--line);background:#6B4E9E;}
+  .pic img{display:block;width:100%;height:auto;}
   .letter{max-width:62ch;}
   .letter h2{font-family:var(--title);font-weight:800;font-size:clamp(30px,6vw,40px);line-height:1.05;margin:0 0 12px;color:var(--pink-deep);}
   .letter p{margin:0 0 12px;}
@@ -149,13 +152,6 @@
   .anywhere{margin-top:18px;text-align:center;border:2px dashed #F7B8D4;border-radius:16px;padding:16px 14px;background:#FFF7FB;}
   .anywhere p{margin:0 0 12px;font-family:var(--hand);font-size:22px;line-height:1.2;color:var(--pink-deep);}
   .anywhere .socbar{margin:0;}
-  .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;}
-  @media (max-width:560px){ .cols{grid-template-columns:1fr;} }
-  .box{border:2px dashed var(--line);border-radius:14px;padding:14px 16px;}
-  .box h3{font-family:var(--pixel);font-weight:400;font-size:12px;margin:0 0 8px;color:var(--ink-soft);}
-  .box ul{margin:0;padding-left:18px;}
-  .box li{margin-bottom:4px;}
-  .box li::marker{content:"♡ ";color:var(--pink);}
 
   /* ---------- заказ ---------- */
   ol.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;gap:16px;}
@@ -305,6 +301,7 @@
         <div class="wbody">
           <h2 class="sec" id="pr-h">prices ✧</h2>
           <p class="psst pk">all prices are in USD ♡ i always tell you the final price before i start — no surprises <span class="kao">(◕‿◕)</span></p>
+          <figure class="pic"><button class="shot" type="button" data-full="art/price-list.jpg" data-cap="my price list ♡"><img src="art/price-list.jpg" alt="Price list, subject to change over time: head (chibi) $25, shoulder-length $30, waist-length $45, full-body $60, stickers for Twitch and other social platforms $20 for one or $85 for a pack of five" width="2000" height="1432" loading="lazy"></button></figure>
           <div class="price"><span><b>Chibi</b><small>a small, squishy full body</small></span><span class="amt">$25</span></div>
           <div class="price"><span><b>Bust</b><small>head and shoulders</small></span><span class="amt">$30</span></div>
           <div class="price"><span><b>Half body</b><small>down to the waist</small></span><span class="amt">$45</span></div>
@@ -314,7 +311,6 @@
           <div class="price"><span><b>Emote pack</b><small>five emotes, one cute set</small></span><span class="amt">$85</span></div>
           <div class="chips">
             <span class="chip">extra character +75%</span>
-            <span class="chip">detailed background +$30</span>
             <span class="chip">complex design +$15</span>
             <span class="chip">commercial use x2</span>
           </div>
@@ -328,6 +324,10 @@
             <li><span>little progress updates, so you're never left wondering <span class="kao">(｡•ᴗ•｡)</span></span></li>
           </ul>
 
+          <h3 class="mini">what i draw ♡ and what i don't</h3>
+          <figure class="pic"><button class="shot" type="button" data-full="art/draw-list.jpg" data-cap="what i draw ♡ and what i don't"><img src="art/draw-list.jpg" alt="What I will draw: furry, NSFW, gore, men and women, adopts, children. What I won't draw: old people, complicated backgrounds, cars and mecha, political themes, PDF, zoophilia" width="2000" height="1432" loading="lazy"></button></figure>
+          <p class="psst">not sure if i'd draw your idea? just ask me ♡ <span class="kao">(・ω・)</span></p>
+
           <div class="anywhere">
             <p>dm me anywhere you like — i answer everywhere ♡</p>
             <div class="socbar">
@@ -335,11 +335,6 @@
               <a class="soc s-blue" href="https://t.me/yoorolie" target="_blank" rel="noopener"><span class="i">✉</span> telegram dm</a>
               <button type="button" class="soc s-pink soon" data-soon="instagram"><span class="i">✿</span> instagram <span class="soon-tag">soon</span></button>
             </div>
-          </div>
-
-          <div class="cols">
-            <div class="box"><h3>i draw</h3><ul><li>original characters</li><li>fanart</li><li>vtuber &amp; twitch assets</li><li>chibis and emotes</li></ul></div>
-            <div class="box"><h3>i don't draw</h3><ul><li>nsfw</li><li>hate symbols</li><li>real people</li><li>anything with ai as a base</li></ul></div>
           </div>
         </div>
       </section>
@@ -363,7 +358,7 @@
             <li>which size you'd like</li>
             <li>pose or expression ideas</li>
             <li>anything i must not get wrong — a scar, eye colour, a favourite accessory</li>
-            <li>background: none, simple or detailed</li>
+            <li>background: none or a simple one</li>
             <li>a date, if you need it by then</li>
           </ul>
 
@@ -375,7 +370,7 @@ size:
 reference:
 about my character:
 pose / expression:
-background: none / simple / detailed
+background: none / simple
 extra character: yes / no
 needed by: </pre>
           </div>
