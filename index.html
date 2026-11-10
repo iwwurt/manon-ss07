@@ -207,6 +207,26 @@
   .loves{display:flex;flex-wrap:wrap;gap:6px;}
   .loves span{font-size:13px;background:var(--pink-soft);border-radius:99px;padding:3px 10px;}
 
+  /* ---------- про меня ---------- */
+  .about-grid{display:grid;grid-template-columns:190px minmax(0,1fr);gap:24px;align-items:start;}
+  @media (max-width:620px){ .about-grid{grid-template-columns:1fr;justify-items:center;} }
+  .polaroid{margin:0;background:#fff;border:2px solid var(--line);border-radius:12px;padding:9px 9px 6px;
+    position:relative;box-shadow:0 5px 0 var(--line);transform:rotate(-2.5deg);max-width:230px;}
+  .polaroid img{display:block;width:100%;height:auto;border-radius:8px;}
+  .polaroid .tape{position:absolute;top:-11px;left:50%;width:80px;height:21px;margin-left:-40px;transform:rotate(-4deg);
+    background:rgba(255,170,210,.5);border:1px dashed rgba(255,255,255,.85);border-radius:2px;}
+  .polaroid figcaption{font-family:var(--hand);font-size:18px;text-align:center;color:var(--ink-soft);margin-top:4px;}
+  .about-text p{margin:0 0 12px;}
+  .fav{margin-top:18px;}
+  .fav h4{font-family:var(--pixel);font-weight:400;font-size:11.5px;color:var(--ink-soft);margin:0 0 7px;}
+  .fav + .fav{margin-top:14px;}
+  .note-box{margin-top:20px;text-align:center;border:2px dashed #F7B8D4;border-radius:16px;padding:16px 14px;background:#FFF7FB;}
+  .note-box p{margin:0 0 12px;font-family:var(--hand);font-size:21px;line-height:1.25;color:var(--pink-deep);}
+  .note-btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:15px;text-decoration:none;color:var(--ink);
+    background:linear-gradient(90deg,#CFF0FF,#FFE0F0,#FFF3CC);border:2.5px solid var(--ink);border-radius:99px;
+    padding:11px 22px;box-shadow:0 4px 0 var(--ink);transition:transform .12s,box-shadow .12s;}
+  .note-btn:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--ink);}
+
   footer{text-align:center;margin-top:22px;font-family:var(--pixel);font-size:11px;color:var(--ink-soft);}
   footer a{color:var(--ink-soft);}
 
@@ -239,6 +259,7 @@
   <nav class="socbar" aria-label="my socials">
     <a class="soc s-mint" href="https://www.tiktok.com/@manon.ss07" target="_blank" rel="noopener"><span class="i">♪</span> tiktok</a>
     <a class="soc s-blue" href="https://t.me/yoorolie" target="_blank" rel="noopener"><span class="i">✉</span> telegram dm</a>
+    <button type="button" class="soc s-lilac" data-copy-text="manon.ss07" data-copied="discord: manon.ss07 — copied! add me ♡"><span class="i">◈</span> discord</button>
     <button type="button" class="soc s-lilac soon" data-soon="my telegram channel"><span class="i">☾</span> tg channel <span class="soon-tag">soon</span></button>
     <button type="button" class="soc s-pink soon" data-soon="instagram"><span class="i">✿</span> instagram <span class="soon-tag">soon</span></button>
     <button type="button" class="soc s-peach soon" data-soon="pinterest"><span class="i">✧</span> pinterest <span class="soon-tag">soon</span></button>
@@ -250,7 +271,7 @@
       <h1 class="logo">manon.ss07</h1>
       <p class="sub">anime &amp; oc artist ✦ hand-drawn ✦ soft colours only</p>
       <nav class="jump" aria-label="on this page">
-        <a href="#gallery">gallery</a>♡<a href="#prices">prices</a>♡<a href="#order">how to order</a>♡<a href="#faq">faq</a>
+        <a href="#gallery">gallery</a>♡<a href="#about">about me</a>♡<a href="#prices">prices</a>♡<a href="#order">how to order</a>♡<a href="#faq">faq</a>
       </nav>
       <div class="scallop" aria-hidden="true"></div>
     </div>
@@ -300,6 +321,43 @@
         </div>
       </section>
 
+      <section class="win" id="about" aria-labelledby="ab-h">
+        <div class="tbar"><b>☆ about.exe</b><span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div>
+        <div class="wbody">
+          <h2 class="sec" id="ab-h">about me ☆</h2>
+          <div class="about-grid">
+            <figure class="polaroid">
+              <span class="tape" aria-hidden="true"></span>
+              <img src="art/mascot.jpg" alt="A chibi girl with pink hair hugging a little diary" width="617" height="1235" loading="lazy">
+              <figcaption>this is kind of me ♡</figcaption>
+            </figure>
+            <div class="about-text">
+              <p>i'm manon, i'm 18 and i've been drawing since i was 12 — i started and never really managed to stop <span class="kao">(｡•ᴗ•｡)</span></p>
+              <p>i draw soft anime girls: bows, floppy dog ears, tiny wings, pastel everything and eyes that look a little bit sad. characters who seem gentle on the outside and have a whole story hiding inside.</p>
+              <p>i'm a bit of a night creature. i wake up close to noon, i sleep a lot and i dream <em>a lot</em> — half of my characters come from there.</p>
+
+              <div class="fav">
+                <h4>anime i'd put in your hands</h4>
+                <div class="loves"><span>bleach</span><span>one piece</span><span>nekopara</span></div>
+              </div>
+              <div class="fav">
+                <h4>things i draw over and over</h4>
+                <div class="loves"><span>bows</span><span>floppy dog ears</span><span>tiny wings</span><span>curly hair</span><span>catgirls</span><span>sad pretty eyes</span></div>
+              </div>
+              <div class="fav">
+                <h4>small comforts</h4>
+                <div class="loves"><span>pastel colours</span><span>long dreams</span><span>drawing at night</span><span>stickers</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="note-box">
+            <p>tell me something about you too ♡<br>what you're watching, your oc, anything</p>
+            <a class="note-btn" href="https://t.me/yoorolie" target="_blank" rel="noopener">✉ say hi to me</a>
+          </div>
+        </div>
+      </section>
+
       <section class="win" id="prices" aria-labelledby="pr-h">
         <div class="tbar"><b>✧ prices.exe</b><span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div>
         <div class="wbody">
@@ -337,6 +395,7 @@
             <div class="socbar">
               <a class="soc s-mint" href="https://www.tiktok.com/@manon.ss07" target="_blank" rel="noopener"><span class="i">♪</span> tiktok</a>
               <a class="soc s-blue" href="https://t.me/yoorolie" target="_blank" rel="noopener"><span class="i">✉</span> telegram dm</a>
+              <button type="button" class="soc s-lilac" data-copy-text="manon.ss07" data-copied="discord: manon.ss07 — copied! add me ♡"><span class="i">◈</span> discord</button>
               <button type="button" class="soc s-pink soon" data-soon="instagram"><span class="i">✿</span> instagram <span class="soon-tag">soon</span></button>
             </div>
           </div>
@@ -434,15 +493,6 @@ needed by: </pre>
         </div>
       </section>
 
-      <section class="win" id="about">
-        <div class="tbar"><b>☆ about.exe</b><span class="ctl" aria-hidden="true"><i>×</i></span></div>
-        <div class="wbody">
-          <p style="margin:0 0 12px">anime &amp; oc artist ✧ i like drawing characters who look soft on the outside and have a whole story inside.</p>
-          <p style="margin:0 0 8px;font-family:var(--pixel);font-size:10.5px;color:var(--lilac)">things i love</p>
-          <div class="loves"><span>bows</span><span>floppy dog ears</span><span>tiny wings</span><span>curly hair</span><span>pastel everything</span><span>sad pretty eyes</span></div>
-        </div>
-      </section>
-
     </aside>
   </div>
 
@@ -472,6 +522,17 @@ needed by: </pre>
   /* соцсети, которых ещё нет */
   document.querySelectorAll("[data-soon]").forEach(function(b){
     b.addEventListener("click", function(){ toast(b.dataset.soon + " isn't here yet (｡•́︿•̀｡) coming soon ♡"); });
+  });
+
+  /* короткий текст в буфер — ник в дискорде: прямой ссылки на профиль там нет */
+  document.querySelectorAll("[data-copy-text]").forEach(function(b){
+    b.addEventListener("click", function(){
+      var text = b.dataset.copyText, done = b.dataset.copied || ("copied: " + text);
+      var fail = function(){ toast(text); };
+      try{
+        navigator.clipboard.writeText(text).then(function(){ toast(done); }, fail);
+      }catch(e){ fail(); }
+    });
   });
 
   /* шаблон заявки в буфер */
